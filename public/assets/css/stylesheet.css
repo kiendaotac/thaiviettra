@@ -1,0 +1,13 @@
+.slider-home .slick-slide img {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+.featured-imagebox-portfolio.style2 .ttm-media-link a.ttm_link{
+    margin-right: 0;
+}
+.featured-imagebox-portfolio.style2:hover .ttm-media-link a {
+    transform: translateX(50%);
+}
