@@ -14,8 +14,8 @@ class ListBrands extends ListRecords
     protected function getActions(): array
     {
         return [
-            Actions\ExportAction::make()
-                ->exporter(BrandExporter::class),
+//            Actions\ExportAction::make()
+//                ->exporter(BrandExporter::class),
             Actions\CreateAction::make(),
         ];
     }

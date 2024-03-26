@@ -49,6 +49,29 @@
                                             <a href="">Liên hệ</a>
                                         </li>
                                     </ul>
+
+                                    <div class="language">
+                                            <div class="language-title">
+                                                <div class="item">{{ app()->getLocale() == 'vi' ? 'English' : 'Tiếng Việt' }}
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+
+                                                </div>
+                                                <div class="choose">
+                                                    <ul>
+                                                        <li class="active" @if(app()->getLocale() !== 'vi') style="filter: grayscale(1)" @endif>
+                                                            <a href="{{ route('language.locale', 'vi') }}">
+                                                                <img width="30" src="{{ asset('assets/image/la-co-viet-nam-vector-1.png') }}">
+                                                            </a>
+                                                        </li>
+                                                        <li class="active" @if(app()->getLocale() !== 'en') style="filter: grayscale(1)" @endif>
+                                                           <a href="{{ route('language.locale', 'en') }}">
+                                                               <img width="30" src="{{ asset('assets/image/american_flag.png') }}">
+                                                           </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </nav>
                                 <!-- menu end -->
                                 <div class="header_extra d-flex flex-row align-items-center justify-content-end">
@@ -72,12 +95,37 @@
                                                     <span>Trà Thái Việt</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="header-cart">
+                                            <div class="header-cart">
                                             <div class="icon">
                                                 <img src="{{ asset('assets/image/shopping-cart.png') }}">
                                             </div>
                                             <div class="number">2</div>
+                                        </div>
+                                        </div>
+                                        <div class="d-flex flex-row  align-items-center">
+                                    
+                                        <div class="language">
+                                            <div class="language-title">
+                                                <div class="item">{{ app()->getLocale() == 'vi' ? 'English' : 'Tiếng Việt' }}
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+
+                                                </div>
+                                                <div class="choose">
+                                                    <ul>
+                                                        <li class="active" @if(app()->getLocale() !== 'vi') style="filter: grayscale(1)" @endif>
+                                                            <a href="{{ route('language.locale', 'vi') }}">
+                                                                <img width="30" src="{{ asset('assets/image/la-co-viet-nam-vector-1.png') }}">
+                                                            </a>
+                                                        </li>
+                                                        <li class="active" @if(app()->getLocale() !== 'en') style="filter: grayscale(1)" @endif>
+                                                           <a href="{{ route('language.locale', 'en') }}">
+                                                               <img width="30" src="{{ asset('assets/image/american_flag.png') }}">
+                                                           </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>

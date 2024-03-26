@@ -12,7 +12,9 @@ nav.main-menu .megamenu-content {
 nav.main-menu .megamenu-fw .mega-submenu .row {
     margin: 0;
 }
-
+nav.main-menu .language{
+  display: none;
+}
 nav.main-menu .megamenu-content {
     width: 100%;
 }
@@ -313,6 +315,12 @@ ul.menu-col li a:focus {
     nav.main-menu.show {
         display: block;
         max-height: 10000px;
+    }
+    nav.main-menu.show .language{
+        text-align: center;
+        padding: 10px 0;
+        display: block;
+        width: 100%;
     }
 
     nav.main-menu ul.menu,

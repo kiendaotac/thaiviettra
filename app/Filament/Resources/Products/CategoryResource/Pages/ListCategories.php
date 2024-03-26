@@ -14,8 +14,8 @@ class ListCategories extends ListRecords
     protected function getActions(): array
     {
         return [
-            Actions\ImportAction::make()
-                ->importer(CategoryImporter::class),
+//            Actions\ImportAction::make()
+//                ->importer(CategoryImporter::class),
             Actions\CreateAction::make(),
         ];
     }

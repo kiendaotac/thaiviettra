@@ -73,7 +73,7 @@ class ProductResource extends Resource
                                 SpatieMediaLibraryFileUpload::make('media')
                                     ->collection('product-images')
                                     ->multiple()
-                                    ->maxFiles(5)
+                                    ->maxFiles(10)
                                     ->hiddenLabel(),
                             ])
                             ->collapsible(),
@@ -82,20 +82,20 @@ class ProductResource extends Resource
                             ->schema([
                                 Forms\Components\TextInput::make('price')
                                     ->numeric()
-                                    ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
+                                    ->rules(['integer'])
                                     ->required(),
 
                                 Forms\Components\TextInput::make('old_price')
                                     ->label('Compare at price')
                                     ->numeric()
-                                    ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
+                                    ->rules(['integer'])
                                     ->required(),
 
                                 Forms\Components\TextInput::make('cost')
                                     ->label('Cost per item')
                                     ->helperText('Customers won\'t see this price.')
                                     ->numeric()
-                                    ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
+                                    ->rules(['integer'])
                                     ->required(),
                             ])
                             ->columns(2),
@@ -105,12 +105,14 @@ class ProductResource extends Resource
                                     ->label('SKU (Stock Keeping Unit)')
                                     ->unique(Product::class, 'sku', ignoreRecord: true)
                                     ->maxLength(255)
+                                    ->default(fn() => Str::random(5))
                                     ->required(),
 
                                 Forms\Components\TextInput::make('barcode')
                                     ->label('Barcode (ISBN, UPC, GTIN, etc.)')
                                     ->unique(Product::class, 'barcode', ignoreRecord: true)
                                     ->maxLength(255)
+                                    ->default(fn() => Str::random(5))
                                     ->required(),
 
                                 Forms\Components\TextInput::make('qty')
@@ -164,6 +166,9 @@ class ProductResource extends Resource
                                 Forms\Components\Select::make('categories')
                                     ->relationship('categories', 'name')
                                     ->multiple()
+                                    ->preload()
+                                    ->getOptionLabelFromRecordUsing(fn($record, $livewire) => $record->getTranslation('name', $livewire->activeLocale))
+                                    ->getSelectedRecordUsing(fn($record, $livewire) => $record->getTranslation('name', $livewire->activeLocale))
                                     ->required(),
                             ]),
                     ])

@@ -2,6 +2,7 @@
     <div class="banner">
         <img src="{{ asset('assets/image/back-7.png') }}">
     </div>
+    <div class="ttm-bgcolor-primary section-block">
     <section class="">
         <div class="about-home">
             <div class="title">
@@ -11,7 +12,7 @@
         </div>
     </section>
     <section
-            class="section-block module_service ttm-row consistency-section ttm-bgcolor-primary  text_tab_image ttm-row about-section  clearfix ">
+            class="section-block module_service ttm-row consistency-section text_tab_image ttm-row about-section  clearfix ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 d-lg-block">
@@ -64,7 +65,6 @@
             </div>
         </div>
     </section>
-    <section class="ttm-bgcolor-primary">
         <section class="section-block module_service ttm-row consistency-section text_tab_image ttm-row about-section  clearfix ">
             <div class="container">
                 <div class="row">
@@ -118,5 +118,5 @@
                 </div>
             </div>
         </div>
-    </section>
+</div>
 </div>

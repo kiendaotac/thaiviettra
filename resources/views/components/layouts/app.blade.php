@@ -52,7 +52,7 @@
             <div class="ttm-row-wrapper-bg-layer ttm-bg-layer"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 widget-area" id="opening_hours">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area" id="opening_hours">
                         <div class="widget-latest-tweets res-991-margin_top0 clearfix" id="opening_hours_data">
                             <div class="widgte-text">
                                 <div class="widgte-text footer_opening_hours"></div>
@@ -113,7 +113,7 @@
                         </div>
 
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 widget-area">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area">
 
                         <div class="widget widget_nav_menu clearfix">
 
@@ -121,25 +121,25 @@
 
                             <ul id="menu-footer-quick-links">
                                 <li>
-                                    <a href="https://buildtab.exdomain.net/ve-chung-toi">
+                                    <a href="#ve-chung-toi">
                                         <i class="fa fa-arrow-right"></i> Về chúng
                                         tôi</a>
                                 </li>
                                 <li>
-                                    <a href="https://buildtab.exdomain.net/du-an">
+                                    <a href="#du-an">
                                         <i class="fa fa-arrow-right"></i>Dự án</a>
                                 </li>
                                 <li>
-                                    <a href="https://buildtab.exdomain.net/lien-he">
+                                    <a href="#lien-he">
                                         <i class="fa fa-arrow-right"></i> Liên hệ
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://buildtab.exdomain.net/dich-vu">
+                                    <a href="#dich-vu">
                                         <i class="fa fa-arrow-right"></i>Dịch vụ</a>
                                 </li>
                                 <li>
-                                    <a href="https://buildtab.exdomain.net/tin-tuc">
+                                    <a href="#tin-tuc">
                                         <i class="fa fa-arrow-right"></i>Tin tức</a>
                                 </li>
                             </ul>
@@ -147,41 +147,63 @@
                         </div>
 
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 widget-area" id="news_footer_custom">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area">
+
+                        <div class="widget widget_nav_menu clearfix">
+
+                            <h3 class="widget-title">Sản phẩm</h3>
+
+                            <ul id="menu-footer-quick-links">
+                                <li>
+                                    <a href="#ve-chung-toi">
+                                        <i class="fa fa-arrow-right"></i> Về chúng
+                                        tôi</a>
+                                </li>
+                                <li>
+                                    <a href="#du-an">
+                                        <i class="fa fa-arrow-right"></i>Dự án</a>
+                                </li>
+                                <li>
+                                    <a href="#lien-he">
+                                        <i class="fa fa-arrow-right"></i> Liên hệ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#dich-vu">
+                                        <i class="fa fa-arrow-right"></i>Dịch vụ</a>
+                                </li>
+                                <li>
+                                    <a href="#tin-tuc">
+                                        <i class="fa fa-arrow-right"></i>Tin tức</a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area" id="news_footer_custom">
                         <div class="widget widget_nav_menu clearfix">
                             <h3 class="widget-title">Facebook</h3>
                             <div class="footer-tags mt-25">
-                                <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/facebook"
-                                     data-tabs="none" data-small-header="false" data-adapt-container-width="true"
-                                     data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered"
-                                     fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=633874986796358&amp;container_width=370&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=none">
-										<span style="vertical-align: bottom; width: 340px; height: 130px;"><iframe
-                                                    name="f409138c8121e298f" width="1000px" height="1000px"
-                                                    data-testid="fb:page Facebook Social Plugin"
-                                                    title="fb:page Facebook Social Plugin" frameborder="0"
-                                                    allowtransparency="true" allowfullscreen="true" scrolling="no"
-                                                    allow="encrypted-media" src="./BuildTab Bussiness_files/page.html"
-                                                    style="border: none; visibility: visible; width: 340px; height: 130px;"
-                                                    class=""></iframe></span>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthaihungtn&tabs&width=270&height=130&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId=214347400429950" width="340" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- <div class="bottom-footer-text ttm-bg copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="text-left">
+                                        <span class="cpy-text">© Copyright 2022-2024
+                                            BuildTab Bussiness.
+                                        </span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="bottom-footer-text ttm-bg copyright">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="text-left">
-									<span class="cpy-text">© Copyright 2022-2024
-										BuildTab Bussiness.
-									</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </div> -->
         </div>
     </footer>
 </div>

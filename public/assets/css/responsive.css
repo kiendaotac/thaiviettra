@@ -139,16 +139,15 @@
         font-size: 14px;
         display: inline-block;
         margin: 0px;
-        padding: 0px 24px 0px 24px;
+        padding: 12px 12px 0px 12px;
         text-decoration: none;
         position: relative;
         z-index: 1;
-        height: 70px;
-        line-height: 70px !important;
+        line-height: 30px !important;
     }
 
     .ttm-header-style-01 #site-header-menu .site-navigation ul.menu>li:first-child>a {
-        padding: 0px 24px 0 0px;
+        padding: 12px 12px 0 0px;
     }
 
     /**/

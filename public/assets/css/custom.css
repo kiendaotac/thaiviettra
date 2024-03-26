@@ -818,7 +818,18 @@ img.ttm-equal-height-image {
 .section-block{
     padding:60px 0;
 }
-
+.section-product{
+    background-image: url('../image/d2d7caf22a8b2b02ad92142f5b65bead.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 20px 60px;
+    border-radius: 45px;
+}
+.section-product .ttm-bg-layer{
+    border-radius: 45px;
+}
 /*custom*/
 .about_image_text_01 .row,
 .text_tab_image .row{
@@ -880,13 +891,20 @@ img.ttm-equal-height-image {
     padding-left: 60px;
     padding-right: 60px;
     text-align: center;
+    border-radius: 20px;
 }
 .about-section-2 .about-home{
     width: 50%;
     margin: 0 auto;
 }
+.about-section-2 .ttm-bg-layer{
+    border-radius: 20px;
+}
 .about-section-2 .about-home .content{
     text-align: center;
+}
+.about-section-2 .button-primary{
+    float: right;
 }
 @media (max-width:1199px){
 .about-section-2 .about-home{

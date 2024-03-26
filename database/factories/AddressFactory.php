@@ -12,11 +12,18 @@ class AddressFactory extends Factory
     public function definition(): array
     {
         return [
-            'country' => strtolower($this->faker->countryCode()),
-            'street' => $this->faker->streetAddress(),
-            'state' => $this->faker->state(),
-            'city' => $this->faker->city(),
-            'zip' => $this->faker->postcode(),
+            'country' => 'VN',
+            'street' => 'Láng Hạ',
+            'state' => 'Ba Đình',
+            'city' => 'Hà Nội',
+            'zip' => 10000,
         ];
+//        return [
+//            'country' => strtolower($this->faker->countryCode()),
+//            'street' => $this->faker->streetAddress(),
+//            'state' => $this->faker->state(),
+//            'city' => $this->faker->city(),
+//            'zip' => $this->faker->postcode(),
+//        ];
     }
 }

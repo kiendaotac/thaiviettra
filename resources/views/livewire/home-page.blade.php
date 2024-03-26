@@ -7,6 +7,7 @@
             <img class="img-center img-banner" src="assets/image/back.png">
         </div>
     </div>
+    <div class="ttm-bgcolor-primary">
     <section class="section-block news_module ttm-row category-section clearfix">
         <div class="container">
             <div class="row">
@@ -14,15 +15,16 @@
                     <div class="row">
                         @foreach($categories as $category)
                             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                                <div class="category">
-                                    <div class="thumb">
-                                        <img src="{{ asset($category->hasMedia('category-images') ? $category->getFirstMediaUrl('category-images') : 'assets/image/cate1.png') }}">
+                                <a href="{{ route('products', ['category' => $category->slug]) }}">
+                                    <div class="category">
+                                        <div class="thumb">
+                                            <img src="{{ asset($category->hasMedia('category-images') ? $category->getFirstMediaUrl('category-images') : 'assets/image/cate1.png') }}">
+                                        </div>
+                                        <div class="content">
+                                            {{ $category->name }}
+                                        </div>
                                     </div>
-                                    <div class="content">
-                                        {{ $category->name }}
-                                    </div>
-                                </div>
-                                <!-- featured-imagebox-post end -->
+                                </a>
                             </div>
                         @endforeach
                     </div>
@@ -61,7 +63,6 @@
             </div>
         </div>
     </section><!--Dream-section-->
-    <section class="foot-body">
         <section class="section-block module_service about_image_text_01  clearfix section-image">
             <div class="container">
                 <div class="row">
@@ -77,6 +78,7 @@
             </div>
         </section>
         <!--Dream-section-end-->
+    <section class="section-block">
         <section class=" module_service section-stept clearfix">
             <div class="container">
                 <div class="row slider-stept stept-blog">
@@ -177,9 +179,9 @@
             </div>
         </section>
         <!-- image-section-end-->
-        <section class="section-block module_service  ttm-row process-section ttm-bgimage-yes bg-img6 ttm-bg ttm-bgcolor-darkgrey res-991-margin_top_0 section-product clearfix">
+        <section class=" container section-block module_service  ttm-row process-section ttm-bgimage-yes bg-img6 ttm-bg ttm-bgcolor-darkgrey res-991-margin_top_0 section-product clearfix">
             <div class="ttm-row-wrapper-bg-layer ttm-bg-layer"></div>
-            <div class="container">
+            <div class="">
                 <div class="head-blog light d-flex flex-row  justify-content-between align-items-center">
                     <div class="title">
                         Sản phẩm nổi bật
@@ -208,4 +210,5 @@
             </div>
         </section>
     </section>
+    </div>
 </div>
