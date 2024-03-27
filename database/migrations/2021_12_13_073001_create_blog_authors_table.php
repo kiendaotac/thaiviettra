@@ -19,8 +19,6 @@ return new class() extends Migration
             $table->string('email')->unique();
             $table->string('photo')->nullable();
             $table->longText('bio')->nullable();
-            $table->string('github_handle')->nullable();
-            $table->string('twitter_handle')->nullable();
             $table->timestamps();
         });
     }

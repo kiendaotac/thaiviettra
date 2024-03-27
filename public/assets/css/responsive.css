@@ -597,7 +597,10 @@
     .featured-icon-box.style11:before {
         content: unset;
     }
-
+    .section-product{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
 }
 
 @media all and (max-width:1130px) {
@@ -1394,7 +1397,10 @@
     .featured-icon-box.style6 {
         margin-top: 40px;
     }
-
+    .section-product{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
 
 }
 

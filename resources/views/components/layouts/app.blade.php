@@ -56,10 +56,11 @@
                         <div class="widget-latest-tweets res-991-margin_top0 clearfix" id="opening_hours_data">
                             <div class="widgte-text">
                                 <div class="widgte-text footer_opening_hours"></div>
-                                <div class="widgte-title">
-                                    <h4>Thông tin</h4>
+                                <div class="footer-logo">
+                                <img id="logo-img" height="45" width="120" class="img-fluid auto_size"
+                                         src="{{ asset('assets/image/logo.png') }}" alt="logo-img">
                                 </div>
-                                <div class="information-footer">
+                                <!-- <div class="information-footer">
                                     <p>Email: <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a>
                                     </p>
                                     <p>Địa chỉ: <a href="javascript:avoid(0)">A12,
@@ -67,7 +68,7 @@
                                     </a>
                                     <p><a>Điện thoại: </a><a href="tel:0123 456 789">0123 456 789</a>
                                     </p>
-                                </div>
+                                </div> -->
                                 <!-- <div class="widgte-title">
                                 <h4>Về chúng tôi</h4>
                             </div>

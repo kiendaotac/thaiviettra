@@ -9,6 +9,7 @@ use Filament\Resources\Pages\ListRecords;
 
 class ListCategories extends ListRecords
 {
+    use ListRecords\Concerns\Translatable;
     protected static string $resource = CategoryResource::class;
 
     protected function getActions(): array
@@ -17,6 +18,7 @@ class ListCategories extends ListRecords
 //            Actions\ImportAction::make()
 //                ->importer(CategoryImporter::class),
             Actions\CreateAction::make(),
+            Actions\LocaleSwitcher::make(),
         ];
     }
 }

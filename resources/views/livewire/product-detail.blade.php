@@ -39,7 +39,7 @@
                                     <span>Mô tả sản phẩm</span>
                                     <p>{{ $product->description }}</p>
                                 </div>
-                                <div class="price">{{ $product->price }}</div>
+                                <div class="price">{{ \Illuminate\Support\Number::currency($product->price, in: 'VND', locale: 'vi') }}</div>
                                 <div class="form-group">
                                     <div class="form-item d-flex flex-row number align-items-center">
                                         <span>Số lượng</span>
@@ -47,8 +47,10 @@
                                     </div>
                                     <div class="btn-group">
                                         <button class="add-to-cart">
-                                            Thêm vào giỏ hàng <span> <img
-                                                    src="{{ asset('assets/image/shopping-cart.png') }}"> </span>
+                                            Thêm vào giỏ hàng
+                                            <span>
+                                                <img src="{{ asset('assets/image/shopping-cart.png') }}">
+                                            </span>
                                         </button>
                                         <button>Mua ngay</button>
                                     </div>
@@ -114,15 +116,16 @@
                         @foreach($products as $product)
                         <div class="item ">
                             <div class="thumb">
-                                <img
-                                    src="{{ asset($product->hasMedia('product-images') ? $product->getFirstMediaUrl('product-images') : 'assets/image/product.jpg') }}">
+                                <a href="{{ route('products.detail', $product->slug) }}">
+                                    <img src="{{ asset($product->hasMedia('product-images') ? $product->getFirstMediaUrl('product-images') : 'assets/image/product.jpg') }}">
+                                </a>
                             </div>
                             <div class="infor">
                                 <div class="name">
-                                    <a href="#" tabindex="-1">{{ $product->name }}</a>
+                                    <a href="{{ route('products.detail', $product->slug) }}" tabindex="-1">{{ $product->name }}</a>
                                 </div>
                                 <div class="price">
-                                    {{ $product->price }}
+                                    {{ \Illuminate\Support\Number::currency($product->price, 'VND', 'vi') }}
                                 </div>
                             </div>
                         </div>

@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Spatie\Tags\HasTags;
+use Spatie\Translatable\HasTranslations;
 
 class Post extends Model
 {
+    use HasTranslations;
     use HasFactory;
     use HasTags;
 
@@ -19,6 +21,15 @@ class Post extends Model
      */
     protected $table = 'blog_posts';
 
+    public array $translatable = [
+        'title',
+        'description',
+        'content',
+        'seo_title',
+        'seo_description',
+    ];
+
+    protected $guarded = [];
     /**
      * @var array<string, string>
      */

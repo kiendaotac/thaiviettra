@@ -72,11 +72,12 @@ jQuery(function ($) {
 
       $('.slider-product').slick({
         dots: true,
-        infinite: false,
+        infinite: true,
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 4,
         autoplay: true,
+        arrows:false,
 
         responsive: [
           {

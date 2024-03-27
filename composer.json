@@ -9,7 +9,6 @@
         "akaunting/laravel-money": "^5.2",
         "filament/filament": "^3.2",
         "filament/spatie-laravel-media-library-plugin": "^3.2",
-        "filament/spatie-laravel-settings-plugin": "^3.2",
         "filament/spatie-laravel-tags-plugin": "^3.2",
         "filament/spatie-laravel-translatable-plugin": "^3.2",
         "guzzlehttp/guzzle": "^7.2",

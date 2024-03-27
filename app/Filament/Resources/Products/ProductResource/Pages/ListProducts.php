@@ -9,6 +9,7 @@ use Filament\Resources\Pages\ListRecords;
 
 class ListProducts extends ListRecords
 {
+    use ListRecords\Concerns\Translatable;
     use ExposesTableToWidgets;
 
     protected static string $resource = ProductResource::class;
@@ -17,6 +18,7 @@ class ListProducts extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+            Actions\LocaleSwitcher::make(),
         ];
     }
 

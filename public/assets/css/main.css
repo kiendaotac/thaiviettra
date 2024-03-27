@@ -3276,13 +3276,16 @@ nav.main-menu ul {
     background-attachment: scroll;
 }
 
-.footer .footer-logo img {
-    max-height: 46px;
-}
+/* .footer .footer-logo img {
+    text-align: center;
+} */
 
 .footer .footer-logo {
     position: relative;
     min-width: 260px;
+}
+    .footer .widget-latest-tweets{
+    text-align: center;
 }
 
 .footer .footer-logo:after {

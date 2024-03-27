@@ -11,6 +11,7 @@ use Filament\Infolists\Components;
 use Filament\Infolists\Infolist;
 use Filament\Notifications\Notification;
 use Filament\Pages\SubNavigationPosition;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -22,6 +23,8 @@ use Illuminate\Support\Str;
 
 class PostResource extends Resource
 {
+    use Translatable;
+
     protected static ?string $model = Post::class;
 
     protected static ?string $slug = 'blog/posts';
@@ -55,6 +58,9 @@ class PostResource extends Resource
                             ->maxLength(255)
                             ->unique(Post::class, 'slug', ignoreRecord: true),
 
+                        Forms\Components\MarkdownEditor::make('description')
+                            ->required()
+                            ->columnSpan('full'),
                         Forms\Components\MarkdownEditor::make('content')
                             ->required()
                             ->columnSpan('full'),
@@ -62,11 +68,13 @@ class PostResource extends Resource
                         Forms\Components\Select::make('blog_author_id')
                             ->relationship('author', 'name')
                             ->searchable()
+                            ->preload()
                             ->required(),
 
                         Forms\Components\Select::make('blog_category_id')
                             ->relationship('category', 'name')
                             ->searchable()
+                            ->preload()
                             ->required(),
 
                         Forms\Components\DatePicker::make('published_at')
@@ -206,6 +214,14 @@ class PostResource extends Resource
                                 ->grow(false),
                         ])->from('lg'),
                     ]),
+                Components\Section::make('Description')
+                    ->schema([
+                        Components\TextEntry::make('description')
+                            ->prose()
+                            ->markdown()
+                            ->hiddenLabel(),
+                    ])
+                    ->collapsible(),
                 Components\Section::make('Content')
                     ->schema([
                         Components\TextEntry::make('content')

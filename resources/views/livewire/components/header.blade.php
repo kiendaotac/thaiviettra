@@ -22,7 +22,7 @@
                                 <nav class="main-menu menu-mobile" id="menu">
                                     <div class="header_search_custom " id="search">
                                         <form class="d-flex flex-row  justify-content-center align-items-center">
-                                            <input wire:model.live="keyword" class="search_query" type="text" placeholder="Tìm kiếm">
+                                            <input wire:model.live="keyword" class="search_query" type="text" placeholder="{{ __('Search') }}">
                                             <button type="submit" class="btn close-search button_search"
                                                     aria-label="searchbox-align">
                                                 <i class="fa fa-search"></i>
@@ -30,30 +30,17 @@
                                         </form>
                                     </div>
                                     <ul class="menu">
-                                        <li class="mega-menu-item {{ request()->routeIs('home-page') ? 'active' : '' }}">
-                                            <a href="{{ route('home-page') }}">Trang chủ</a>
-                                        </li>
-                                        <li class="mega-menu-item {{ request()->routeIs('brand*') ? 'active' : '' }}">
-                                            <a href="{{ route('brand') }}">Thương hiệu</a>
-                                        </li>
-                                        <li class="mega-menu-item {{ request()->routeIs('products*') ? 'active' : '' }}">
-                                            <a href="{{ route('products') }}">Bảo trà</a>
-                                        </li>
-                                        <li class="mega-menu-item">
-                                            <a href="">Khuyến mại</a>
-                                        </li>
-                                        <li class="mega-menu-item">
-                                            <a href="">Thế giới trà</a>
-                                        </li>
-                                        <li class="mega-menu-item">
-                                            <a href="">Liên hệ</a>
-                                        </li>
+                                        @foreach($menus ?? [] as $menu)
+                                            <li class="mega-menu-item {{ $menu['route'] ? (request()->routeIs(($menu['route']) . '*') ? 'active' : '') : '' }}">
+                                                <a href="{{ $menu['route'] ? route($menu['route']) : '' }}">{{ $menu['name'] ?: '' }}</a>
+                                            </li>
+                                        @endforeach
                                     </ul>
 
                                     <div class="language">
                                             <div class="language-title">
                                                 <div class="item">{{ app()->getLocale() == 'vi' ? 'English' : 'Tiếng Việt' }}
-                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                <!-- <i class="fa fa-angle-down" aria-hidden="true"></i> -->
 
                                                 </div>
                                                 <div class="choose">
@@ -82,8 +69,8 @@
                                                     <i class="flaticon-phone-call"></i>
                                                 </div>
                                                 <div class="content">
-                                                    <span class="title"> 0919 826 363 </span>
-                                                    <span>Hotline tư vấn</span>
+                                                    <span class="title">{{ $settings->where('key', 'hotline_number')->first()->value }}</span>
+                                                    <span>{{ $settings->where('key', 'hotline')->first()->value }}</span>
                                                 </div>
                                             </div>
                                             <div class="icon-box d-flex flex-row  justify-content-between align-items-center">
@@ -91,8 +78,8 @@
                                                     <i class="flaticon flaticon-placeholder"></i>
                                                 </div>
                                                 <div class="content">
-                                                    <span class="title"> ĐIỂM BÁN </span>
-                                                    <span>Trà Thái Việt</span>
+                                                    <span class="title">{{ $settings->where('key', 'store')->first()->value }}</span>
+                                                    <span>{{ $settings->where('key', 'store_name')->first()->value }}</span>
                                                 </div>
                                             </div>
                                             <div class="header-cart">
@@ -103,7 +90,7 @@
                                         </div>
                                         </div>
                                         <div class="d-flex flex-row  align-items-center">
-                                    
+
                                         <div class="language">
                                             <div class="language-title">
                                                 <div class="item">{{ app()->getLocale() == 'vi' ? 'English' : 'Tiếng Việt' }}

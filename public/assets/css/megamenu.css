@@ -322,7 +322,12 @@ ul.menu-col li a:focus {
         display: block;
         width: 100%;
     }
-
+    nav.main-menu.show .language .choose {
+        position: absolute;
+        bottom: 0;
+        left: 101px;
+        transition: 0.25s;
+    }
     nav.main-menu ul.menu,
     nav.main-menu ul.menu>li {
         display: block;

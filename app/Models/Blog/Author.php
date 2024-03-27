@@ -14,6 +14,7 @@ class Author extends Model
      * @var string
      */
     protected $table = 'blog_authors';
+    protected $fillable = ['name', 'email', 'photo', 'bio'];
 
     /** @return HasMany<Post> */
     public function posts(): HasMany

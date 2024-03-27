@@ -42,14 +42,6 @@ class AuthorResource extends Resource
 
                 Forms\Components\MarkdownEditor::make('bio')
                     ->columnSpan('full'),
-
-                Forms\Components\TextInput::make('github_handle')
-                    ->label('GitHub handle')
-                    ->maxLength(255),
-
-                Forms\Components\TextInput::make('twitter_handle')
-                    ->label('Twitter handle')
-                    ->maxLength(255),
             ]);
     }
 
@@ -57,34 +49,18 @@ class AuthorResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\Layout\Split::make([
-                    Tables\Columns\Layout\Stack::make([
-                        Tables\Columns\TextColumn::make('name')
-                            ->searchable()
-                            ->sortable()
-                            ->weight('medium')
-                            ->alignLeft(),
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable()
+                    ->sortable()
+                    ->weight('medium')
+                    ->alignLeft(),
 
-                        Tables\Columns\TextColumn::make('email')
-                            ->label('Email address')
-                            ->searchable()
-                            ->sortable()
-                            ->color('gray')
-                            ->alignLeft(),
-                    ])->space(),
-
-                    Tables\Columns\Layout\Stack::make([
-                        Tables\Columns\TextColumn::make('github_handle')
-                            ->icon('icon-github')
-                            ->label('GitHub')
-                            ->alignLeft(),
-
-                        Tables\Columns\TextColumn::make('twitter_handle')
-                            ->icon('icon-twitter')
-                            ->label('Twitter')
-                            ->alignLeft(),
-                    ])->space(2),
-                ])->from('md'),
+                Tables\Columns\TextColumn::make('email')
+                    ->label('Email address')
+                    ->searchable()
+                    ->sortable()
+                    ->color('gray')
+                    ->alignLeft(),
             ])
             ->filters([
                 //
