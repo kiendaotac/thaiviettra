@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </section>
-            <section
+            {{--<section
                 class="section-block module_service process-section ttm-bgimage-yes bg-img6 ttm-bg res-991-margin_top_0 ttm-bgcolor-darkgrey ttm-row perfomance-section bg-layer-equal-height clearfix">
                 <div class="container">
                     <div class="row">
@@ -103,7 +103,7 @@
                         consectetur provident pariatur ullam nostrum vitae maxime quod incidunt, nesciunt impedit quasi
                         nam.</p>
                 </div>
-            </section>
+            </section>--}}
             <section
                 class="section-block module_service process-section ttm-bgimage-yes bg-img6 ttm-bg res-991-margin_top_0 ttm-row perfomance-section bg-layer-equal-height clearfix">
                 <div class="container">

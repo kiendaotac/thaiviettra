@@ -5332,11 +5332,13 @@ body.fb_hidden {
 }
 .traviet-blog .thumb img{
     width: 100%;
+    max-height: 150px;
 }
 .traviet-blog .infor{
     background-color: #C4C4C4;
     padding: 20px;
     border-radius: 0 0 10px 10px;
+    min-height: 140px;
 }
 .head-blog{
     padding-bottom: 20px;
@@ -5389,11 +5391,24 @@ body.fb_hidden {
 .about-section .about-img img{
     border-radius: 10px;
 }
+.category-list{
+    text-align: center;
+}
+.category-list ul{
+    padding: 0;
+}
 .category-list ul li{
     display: inline-block;
     text-decoration: none;
     margin-bottom: 20px;
     text-align: center;
+    padding: 0 20px;
+}
+.category-list ul li:first-child{
+    padding-left: 0;
+}
+.category-list ul li:last-child{
+    padding-right: 0;
 }
 .category-list ul li span{
     display: block;
@@ -5401,6 +5416,7 @@ body.fb_hidden {
 .category-list ul li img{
     border-radius: 50%;
     margin-bottom: 10px;
+    max-width: 200px;
 }
 .category-list ul li .name{
     font-size: 12px;

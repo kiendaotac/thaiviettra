@@ -153,14 +153,14 @@
                         Tin Tức
                     </div>
                     <div class="button">
-                        <a href="#">Xem Thêm</a>
+                        <a href="{{ route('brand') }}">Xem Thêm</a>
                     </div>
                 </div>
                 <div class="row slider-blog traviet-blog">
                     @foreach($posts as $post)
                         <div class="item">
                             <div class="thumb">
-                                <img src="{{ asset($post->image) ?? 'assets/image/blog-1.jpg' }}">
+                                <img src="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}">
                             </div>
                             <div class="infor">
                                 <div class="name">
@@ -170,7 +170,7 @@
                                     {{ $post->title }}
                                 </div>
                                 <div class="read-more">
-                                    <a href="#">Read More</a>
+                                    <a href="{{ route('brand.detail', $post->slug) }}">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -187,21 +187,23 @@
                         Sản phẩm nổi bật
                     </div>
                     <div class="button">
-                        <a href="#">Xem Thêm</a>
+                        <a href="{{ route('products') }}">Xem Thêm</a>
                     </div>
                 </div>
                 <div class="row slider-product light traviet-product">
                     @foreach($products as $product)
                         <div class="item">
                             <div class="thumb">
-                                <img src="{{ asset($product->hasMedia('product-images') ? $product->getFirstMediaUrl('product-images') : 'assets/image/product.jpg') }}">
+                                <a href="{{ route('products.detail', $product->slug) }}">
+                                    <img src="{{ asset($product->hasMedia('product-images') ? $product->getFirstMediaUrl('product-images') : 'assets/image/product.jpg') }}">
+                                </a>
                             </div>
                             <div class="infor">
                                 <div class="name">
-                                    <a href="#">{{ $product->name }}</a>
+                                    <a href="{{ route('products.detail', $product->slug) }}">{{ $product->name }}</a>
                                 </div>
                                 <div class="price">
-                                    {{ $product->price }}
+                                    {{ \Illuminate\Support\Number::currency($product->price, 'vnd', 'vi') }}
                                 </div>
                             </div>
                         </div>

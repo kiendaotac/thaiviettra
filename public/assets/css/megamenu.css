@@ -317,16 +317,19 @@ ul.menu-col li a:focus {
         max-height: 10000px;
     }
     nav.main-menu.show .language{
-        text-align: center;
-        padding: 10px 0;
+        padding: 15px;
         display: block;
         width: 100%;
+        opacity: 1;
+    }
+    nav.main-menu.show .language .item{
+        display: inline-block;
     }
     nav.main-menu.show .language .choose {
-        position: absolute;
-        bottom: 0;
-        left: 101px;
-        transition: 0.25s;
+        opacity: 1;
+        display: inline-block;
+        vertical-align: middle;
+        position: static;
     }
     nav.main-menu ul.menu,
     nav.main-menu ul.menu>li {

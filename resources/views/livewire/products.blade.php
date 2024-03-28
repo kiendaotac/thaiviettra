@@ -5,7 +5,7 @@
     <section class="section-block module_service process-section ttm-bgimage-yes bg-img6 ttm-bg res-991-margin_top_0 ttm-bgcolor-primary  clearfix">
         <div class="container">
             <div class="category-list">
-                <ul class=" d-flex flex-row justify-content-between ">
+                <ul class=" ">
                     @foreach($categories as $category)
                         <li>
                             <a href="#" wire:click.prevent="setCategory('{{ $category->slug }}')">
