@@ -14,9 +14,9 @@
                             </div>
                             <div class=" d-flex flex-row ">
                                 <div class="btn-show-menu-mobile menubar menubar--squeeze">
-											<span class="menubar-box">
-												<span class="menubar-inner"></span>
-											</span>
+                                    <span class="menubar-box">
+                                        <span class="menubar-inner"></span>
+                                    </span>
                                 </div>
                                 <!-- menu -->
                                 <nav class="main-menu menu-mobile" id="menu">
@@ -30,11 +30,42 @@
                                         </form>
                                     </div>
                                     <ul class="menu">
-                                        @foreach($menus ?? [] as $menu)
-                                            <li class="mega-menu-item {{ $menu['route'] ? (request()->routeIs(($menu['route']) . '*') ? 'active' : '') : '' }}">
-                                                <a href="{{ $menu['route'] ? route($menu['route']) : '' }}">{{ $menu['name'] ?: '' }}</a>
-                                            </li>
-                                        @endforeach
+                                        <li class="mega-menu-item @if(request()->is('home*')) active @endif">
+                                            <a href="/">{{ __('menu.header.homepage') }}</a>
+                                        </li>
+                                        <li class="mega-menu-item @if(request()->routeIs('brand*')) active @endif">
+                                            <a href="{{ route('brand') }}">{{ __('menu.header.brand') }}</a>
+                                            @if($brandPosts)
+                                                <ul class="mega-submenu">
+                                                    @foreach($brandPosts as $post)
+                                                        <li>
+                                                            <a href="{{ route('brand.detail', $post->slug) }}">{{ $post->title }}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
+                                        <li class="mega-menu-item @if(request()->routeIs('products*')) active @endif">
+                                            <a href="{{ route('products') }}">{{ __('menu.header.products') }}</a>
+                                        </li>
+                                        <li class="mega-menu-item @if(request()->routeIs('discount')) active @endif">
+                                            <a href="#">{{ __('menu.header.discount') }}</a>
+                                            @if($discounts)
+                                                <ul class="mega-submenu">
+                                                    @foreach($discounts as $category)
+                                                        <li>
+                                                            <a href="{{ route('discount',$category->slug) }}">{{ $category->name }}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
+                                        <li class="mega-menu-item">
+                                            <a href="{{ route('blog') }}">{{ __('menu.header.world_of_tea') }}</a>
+                                        </li>
+                                        <li class="mega-menu-item">
+                                            <a href="{{ route('contact') }}">{{ __('menu.header.contact') }}</a>
+                                        </li>
                                     </ul>
 
                                     <div class="language">

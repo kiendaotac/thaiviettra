@@ -1,6 +1,6 @@
 <div class="site-main">
     <div class="banner">
-        <img src="assets/image/back-7.png">
+        <img src="{{ asset('assets/image/banner-shop.jpg') }}">
     </div>
     <section class="section-block module_service process-section ttm-bgimage-yes bg-img6 ttm-bg res-991-margin_top_0 ttm-bgcolor-primary  clearfix">
         <div class="container">
@@ -21,7 +21,7 @@
             <div>
                 <div class="head-blog  d-flex flex-row justify-content-between align-items-center __web-inspector-hide-shortcut__">
                     <div class="title">
-                        Sản phẩm bán chạy
+                        {{ __('Products') }}
                     </div>
                 </div>
                 <div class="row">

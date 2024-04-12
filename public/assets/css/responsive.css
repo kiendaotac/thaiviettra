@@ -140,7 +140,7 @@
         font-size: 14px;
         display: inline-block;
         margin: 0px;
-        padding: 12px 12px 0px 12px;
+        padding: 18px 18px 0px 18px;
         text-decoration: none;
         position: relative;
         z-index: 1;
@@ -148,7 +148,7 @@
     }
 
     .ttm-header-style-01 #site-header-menu .site-navigation ul.menu>li:first-child>a {
-        padding: 12px 12px 0 0px;
+        padding: 18px 18px 0 0px;
     }
 
     /**/

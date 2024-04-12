@@ -33,7 +33,7 @@ class Products extends Component
 
     private function getData(): void
     {
-        $this->categories = Category::query()->with('media')->limit(6)->latest()->get();
+        $this->categories = Category::query()->where('is_visible', true)->with('media')->limit(6)->latest()->get();
         $this->products = Product::query()->with('media')->when($this->category, function ($q) {
             $q->whereHas('categories', function ($q) {
                 return $q->where('slug', $this->category);

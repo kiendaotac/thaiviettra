@@ -2375,6 +2375,9 @@ nav.main-menu ul.menu li>ul.mega-submenu li a:hover,
 
 .ttm-bgcolor-primary{
     background-image: url(../image/back-4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .ttm-bgcolor-primary2{
     background-image: url(../image/d2d7caf22a8b2b02ad92142f5b65bead.jpg);
@@ -5334,11 +5337,23 @@ body.fb_hidden {
     width: 100%;
     max-height: 150px;
 }
+.traviet-blog.page img{
+    max-height: 300px;
+    border-radius: 10px;
+}
 .traviet-blog .infor{
     background-color: #C4C4C4;
     padding: 20px;
     border-radius: 0 0 10px 10px;
     min-height: 140px;
+}
+.traviet-blog.page .infor{
+    background-color: transparent;
+    padding: 10px 0;
+    min-height: auto;
+}
+.traviet-blog.page{
+    margin-bottom: 20px;
 }
 .head-blog{
     padding-bottom: 20px;
@@ -5390,6 +5405,7 @@ body.fb_hidden {
 }
 .about-section .about-img img{
     border-radius: 10px;
+    width: 100%;
 }
 .category-list{
     text-align: center;
@@ -5543,4 +5559,45 @@ body.fb_hidden {
 }
 .slider-banner  .slick-slide{
     padding: 0;
+}
+.contact-page .form-group{
+    margin-bottom: 20px;
+}
+.contact-page .form-group label{
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.contact-page .form-group input{
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ACACAC
+}
+.contact-page .form-group textarea{
+    height: 200px;
+    border-radius: 5px;
+    border: 1px solid #ACACAC
+}   
+.contact-page button{
+    background-color: var(--dark-grey-color);
+    width: 100%;
+    color: var(--white-color);
+    font-weight: bold;
+    border-radius: 5px;
+}
+.contact-page ul {
+    padding: 0;
+    margin: 0;
+}
+.contact-page ul li{
+    display: block;
+    text-decoration: none;
+    margin-bottom: 20px;
+    list-style: none;
+}
+.contact-page ul li span{
+    font-weight: bold;
+}
+.contact-page ul li p{
+    margin: 0;
 }

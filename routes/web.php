@@ -2,11 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', \App\Livewire\HomePage::class)->name('home-page');
-Route::get('thuong-hieu', \App\Livewire\Brand::class)->name('brand');
-Route::get('thuong-hieu/{slug}', \App\Livewire\BrandDetail::class)->name('brand.detail');
-Route::get('bao-tra', \App\Livewire\Products::class)->name('products');
-Route::get('san-pham/{slug}', \App\Livewire\ProductDetail::class)->name('products.detail');
+//Route::get('/', \App\Livewire\HomePage::class)->name('home-page');
+Route::get('/', function () {
+    return redirect('home');
+});
+Route::group(['namespace' => 'App\Livewire'], function () {
+    Route::get('thuong-hieu', 'Brand')->name('brand');
+    Route::get('thuong-hieu/{slug}', 'BrandDetail')->name('brand.detail');
+    Route::get('bao-tra', 'Products')->name('products');
+    Route::get('san-pham/{slug}', 'ProductDetail')->name('products.detail');
+    Route::get('khuyen-mai/{slug}', 'Discount')->name('discount');
+    Route::get('blog', 'Blog')->name('blog');
+    Route::get('contact', 'Contact')->name('contact');
+});
+
 Route::get('language/{locale}', function ($locale) {
     if (!in_array($locale, ['en', 'vi'])) {
         session()->put('locale', 'vi');

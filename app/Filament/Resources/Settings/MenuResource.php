@@ -30,7 +30,15 @@ class MenuResource extends Resource
                 Forms\Components\Repeater::make('content')->columnSpanFull()
                 ->schema([
                     Forms\Components\TextInput::make('name'),
-                    Forms\Components\TextInput::make('route')
+                    Forms\Components\TextInput::make('route'),
+                    Forms\Components\Select::make('type')
+                    ->options([
+                        'router' => 'Router name',
+                        'uri' => 'Part of internal url',
+                        'url' => 'External url'
+                    ])
+                    ->selectablePlaceholder(false)
+                    ->default('router')
                 ])
             ]);
     }
@@ -40,6 +48,7 @@ class MenuResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('type'),
                 Tables\Columns\TextColumn::make('created_at')->time('d/m/Y H:i'),
                 Tables\Columns\TextColumn::make('updated_at')->time('d/m/Y H:i'),
             ])

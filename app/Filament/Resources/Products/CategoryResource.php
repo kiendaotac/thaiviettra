@@ -55,6 +55,9 @@ class CategoryResource extends Resource
                             ->label('Parent')
                             ->relationship('parent', 'name', fn (Builder $query) => $query->where('parent_id', null))
                             ->searchable()
+                            ->preload()
+                            ->getOptionLabelFromRecordUsing(fn($record, $livewire) => $record->getTranslation('name', $livewire->activeLocale))
+                            ->getSelectedRecordUsing(fn($record, $livewire) => $record->getTranslation('name', $livewire->activeLocale))
                             ->placeholder('Select parent category'),
 
                         Forms\Components\Toggle::make('is_visible')

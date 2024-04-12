@@ -1,4 +1,4 @@
-<div class="site-main">
+<div class="site-main ttm-bgcolor-primary">
     <div class="slick_slider slider-banner lazy ">
         <div class="item">
             <img class="img-center img-banner" src="assets/image/back.png">
@@ -7,7 +7,6 @@
             <img class="img-center img-banner" src="assets/image/back.png">
         </div>
     </div>
-    <div class="ttm-bgcolor-primary">
     <section class="section-block news_module ttm-row category-section clearfix">
         <div class="container">
             <div class="row">
@@ -32,8 +31,7 @@
             </div>
         </div>
     </section>
-    <section
-            class="section-block module_service ttm-row consistency-section ttm-bgcolor-darkgrey  text_tab_image ttm-row perfomance-section  clearfix "
+    <section class="section-block module_service ttm-row consistency-section ttm-bgcolor-darkgrey  text_tab_image ttm-row perfomance-section  clearfix "
             id="module_service-0">
         <div class="container">
             <div class="row">
@@ -62,22 +60,21 @@
                 </div>
             </div>
         </div>
-    </section><!--Dream-section-->
-        <section class="section-block module_service about_image_text_01  clearfix section-image">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title">
-                            <img src="assets/image/back-6.png">
-                        </div>
-                        <div class="">
-                            <img src="assets/image/back-5.png">
-                        </div>
+    </section>
+    <section class="section-block module_service about_image_text_01  clearfix section-image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <img src="assets/image/back-6.png">
+                    </div>
+                    <div class="">
+                        <img src="assets/image/back-5.png">
                     </div>
                 </div>
             </div>
-        </section>
-        <!--Dream-section-end-->
+        </div>
+    </section>
     <section class="section-block">
         <section class=" module_service section-stept clearfix">
             <div class="container">
@@ -212,5 +209,4 @@
             </div>
         </section>
     </section>
-    </div>
 </div>
