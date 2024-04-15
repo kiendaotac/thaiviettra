@@ -14,6 +14,8 @@ Route::group(['namespace' => 'App\Livewire'], function () {
     Route::get('khuyen-mai/{slug}', 'Discount')->name('discount');
     Route::get('blog', 'Blog')->name('blog');
     Route::get('contact', 'Contact')->name('contact');
+    Route::get('checkout', 'Checkout')->name('checkout');
+    Route::get('cart', 'Cart')->name('cart');
 });
 
 Route::get('language/{locale}', function ($locale) {

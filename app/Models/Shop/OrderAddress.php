@@ -11,6 +11,7 @@ class OrderAddress extends Model
     use HasFactory;
 
     protected $table = 'shop_order_addresses';
+    protected $fillable = ['country', 'street', 'city', 'state', 'zip'];
 
     /** @return MorphTo<Model,self> */
     public function addressable(): MorphTo

@@ -20,6 +20,7 @@
     <link rel="preload" as="style" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
     <link rel="preload" as="style" type="text/css" href="{{ asset('assets/css/prettyPhoto.css') }}">
     <link rel="preload" as="style" type="text/css" href="{{ asset('assets/css/custom.css') }}">
+    <link rel="preload" as="style" type="text/css" href="{{ asset('assets/css/flatsome-shop.css') }}">
     <link rel="preload" as="style" type="text/css" href="{{ asset('assets/css/stylesheet.css') }}">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
 
@@ -77,7 +78,7 @@
                                     ty tư vấn và cơ sở hạ tầng đáng tin cậy nhất
                                     trên toàn thế giới.<br></p>
                             </div> -->
-                                <div class="widget_social padding_top10 clearfix">
+                                <div class=" padding_top10 clearfix">
                                     <div class="social-icons">
                                         <ul class="social-icons list-inline">
                                             <li>
@@ -211,9 +212,20 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/slick.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/custom.js') }}"></script>
+<script>
+    document.addEventListener('orderSuccess', function (data) {
+        Swal.fire({
+            title: "Thêm sản phẩm thành công",
+            text: "",
+            icon: "success",
+            confirmButtonColor: "#0E8342",
+        });
+    })
+</script>
 </body>
 </html>

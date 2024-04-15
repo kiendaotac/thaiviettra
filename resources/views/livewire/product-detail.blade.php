@@ -2,11 +2,11 @@
         <div class="banner">
             <img src="{{ asset('assets/image/banner-product.jpg') }}">
         </div>
-        <div class="ttm-bgcolor-primary">
+        <div class="ttm-bgcolor-primary" wire:ignore.self>
             <section class="section-block module_service process-section ttm-bgimage-yes bg-img6 ttm-bg res-991-margin_top_0 ttm-row perfomance-section bg-layer-equal-height product-detail clearfix">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" wire:ignore>
                             <div class="slider-for px-0">
                                 @foreach($product->getMedia('product-images') ?? [] as $image)
                                 <img src="{{ $image->getUrl() }}">
@@ -27,20 +27,35 @@
                                     <span>{{ __('Product description') }}</span>
                                     <p>{{ $product->description }}</p>
                                 </div>
-                                <div class="price">{{ \Illuminate\Support\Number::currency($product->price, in: 'VND', locale: 'vi') }}</div>
+                                @php
+                                if ($variant) {
+                                    $variantPrice = $product->variants->where('id', $variant)->first()->price;
+                                    $price = \Illuminate\Support\Number::currency($variantPrice, in: 'VND', locale: 'vi');
+                                } else {
+                                    $price = \Illuminate\Support\Number::currency($product->price, in: 'VND', locale: 'vi');
+                                }
+                                @endphp
+                                <div class="price">{{ $price }}</div>
                                 <div class="form-group">
                                     <div class="form-item d-flex flex-row number align-items-center">
                                         <span>{{ __('Quantity') }}</span>
-                                        <input input type="number" class="form-control bfh-number">
+                                        <input wire:model.debounce="qty" type="number" class="form-control bfh-number">
+                                        @if($product->variants->count())
+                                            <select wire:model.live="variant" class="form-control" style="width: 200px; margin-left: 10px">
+                                                @foreach($product->variants ?? [] as $v)
+                                                    <option value="{{ $v->id }}">{{ \Illuminate\Support\Number::format($v->weight) }} (gram)</option>
+                                                @endforeach
+                                            </select>
+                                        @endif
                                     </div>
                                     <div class="btn-group">
-                                        <button class="add-to-cart">
+                                        <button class="add-to-cart" wire:click.prevent="addToCart">
                                             {{ __('Add to card') }}
                                             <span>
                                                 <img src="{{ asset('assets/image/shopping-cart.png') }}">
                                             </span>
                                         </button>
-                                        <button>{{ __('Buy now') }}</button>
+                                        <button wire:click.prevent="buyNow">{{ __('Buy now') }}</button>
                                     </div>
                                 </div>
                                 <div class="meta-group d-flex flex-row align-items-center">
@@ -99,7 +114,7 @@
                             <h5>{{ __("Related products") }}</h5>
                         </div>
                     </div>
-                    <div class="row slider-product  traviet-product ">
+                    <div class="row slider-product  traviet-product " wire:ignore>
                         @foreach($products as $product)
                         <div class="item ">
                             <div class="thumb">

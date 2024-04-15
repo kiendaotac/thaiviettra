@@ -5,6 +5,8 @@ namespace App\Livewire\Components;
 use App\Models\Blog\Post;
 use App\Models\Discount;
 use App\Models\Settings\Setting;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class Header extends Component
@@ -15,6 +17,7 @@ class Header extends Component
     ];
 
     public $settings;
+    public $cart;
 
     public function mount()
     {
@@ -23,10 +26,17 @@ class Header extends Component
             $query->where('slug', 'thuong-hieu');
         })->oldest()->get();
         $this->discounts = Discount::query()->whereStatus('active')->get();
+        $this->cart = Cart::instance('default')->content()->toArray();
     }
 
     public function render()
     {
         return view('livewire.components.header');
+    }
+
+    #[On('updateCart')]
+    public function updateCart(): void
+    {
+        $this->cart = Cart::instance('default')->content()->toArray();
     }
 }

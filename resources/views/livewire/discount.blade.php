@@ -100,7 +100,7 @@
         @endif
         @if($discount->paper)
             <div class="container ">
-                <section class="section-block module_service process-section ttm-bgcolor-darkgrey ttm-bgimage-yes bg-img6 ttm-bg res-991-margin_top_0 ttm-bgcolor-primary2 ttm-row perfomance-section about-section-2 bg-layer-equal-height clearfix">
+                <section style="padding-top:30px; padding-bottom:30px" class="section-block module_service process-section ttm-bgcolor-darkgrey ttm-bgimage-yes bg-img6 ttm-bg res-991-margin_top_0 ttm-bgcolor-primary2 ttm-row perfomance-section about-section-2 bg-layer-equal-height clearfix">
                     <div class="ttm-row-wrapper-bg-layer ttm-bg-layer"></div>
                     <div class="head-blog  d-flex flex-row  justify-content-center align-items-center">
                         <div class="title">

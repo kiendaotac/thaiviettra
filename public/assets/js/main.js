@@ -26,9 +26,9 @@ jQuery(function ($) {
     "use strict";
     $('.slider-banner').slick({
         dots: true,
-        infinite: false,
         speed: 300,
         slidesToShow: 1,
+        infinite: true,
         slidesToScroll: 1,
         autoplay: true,
     });
@@ -155,6 +155,22 @@ jQuery(function ($) {
         asNavFor: '.slider-nav'
       });
       $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
+      });
+
+      $('.slider-for-stept').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+      });
+      $('.slider-nav-stept').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         asNavFor: '.slider-for',

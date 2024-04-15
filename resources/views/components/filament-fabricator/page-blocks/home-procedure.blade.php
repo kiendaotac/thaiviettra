@@ -13,7 +13,7 @@
                     @endif
                 </div>
                 @if($image)
-                    <div class="">
+                    <div class="slider-for">
                         <img src="{{ \Illuminate\Support\Facades\Storage::url(is_array($image) ? array_values($image)[0]: $image) }}">
                     </div>
                 @endif
@@ -23,7 +23,7 @@
 </section>
 <section class=" module_service section-stept clearfix">
     <div class="container">
-        <div class="row slider-stept stept-blog">
+        <div class="row slider-nav stept-blog">
             @foreach($process ?? [] as $step)
                 <div class="item">
                     <div class="stept-wrap">

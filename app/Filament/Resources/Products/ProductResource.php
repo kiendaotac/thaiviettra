@@ -3,6 +3,10 @@
 namespace App\Filament\Resources\Products;
 
 use App\Filament\Resources\Products\BrandResource\RelationManagers\ProductsRelationManager;
+use App\Filament\Resources\Products\ProductResource\Pages\CreateProduct;
+use App\Filament\Resources\Products\ProductResource\Pages\EditProduct;
+use App\Filament\Resources\Products\ProductResource\Pages\ListProducts;
+use App\Filament\Resources\Products\ProductResource\RelationManagers\VariantsRelationManager;
 use App\Filament\Resources\Products\ProductResource\Widgets\ProductStats;
 use App\Models\Shop\Product;
 use Filament\Forms;
@@ -77,7 +81,11 @@ class ProductResource extends Resource
                                     ->hiddenLabel(),
                             ])
                             ->collapsible(),
+                    ])
+                    ->columnSpan(['lg' => 2]),
 
+                Forms\Components\Group::make()
+                    ->schema([
                         Forms\Components\Section::make('Pricing')
                             ->schema([
                                 Forms\Components\TextInput::make('price')
@@ -97,52 +105,7 @@ class ProductResource extends Resource
                                     ->numeric()
                                     ->rules(['integer'])
                                     ->required(),
-                            ])
-                            ->columns(2),
-                        Forms\Components\Section::make('Inventory')
-                            ->schema([
-                                Forms\Components\TextInput::make('sku')
-                                    ->label('SKU (Stock Keeping Unit)')
-                                    ->unique(Product::class, 'sku', ignoreRecord: true)
-                                    ->maxLength(255)
-                                    ->default(fn() => Str::random(5))
-                                    ->required(),
-
-                                Forms\Components\TextInput::make('barcode')
-                                    ->label('Barcode (ISBN, UPC, GTIN, etc.)')
-                                    ->unique(Product::class, 'barcode', ignoreRecord: true)
-                                    ->maxLength(255)
-                                    ->default(fn() => Str::random(5))
-                                    ->required(),
-
-                                Forms\Components\TextInput::make('qty')
-                                    ->label('Quantity')
-                                    ->numeric()
-                                    ->rules(['integer', 'min:0'])
-                                    ->required(),
-
-                                Forms\Components\TextInput::make('security_stock')
-                                    ->helperText('The safety stock is the limit stock for your products which alerts you if the product stock will soon be out of stock.')
-                                    ->numeric()
-                                    ->rules(['integer', 'min:0'])
-                                    ->required(),
-                            ])
-                            ->columns(2),
-
-                        Forms\Components\Section::make('Shipping')
-                            ->schema([
-                                Forms\Components\Checkbox::make('backorder')
-                                    ->label('This product can be returned'),
-
-                                Forms\Components\Checkbox::make('requires_shipping')
-                                    ->label('This product will be shipped'),
-                            ])
-                            ->columns(2),
-                    ])
-                    ->columnSpan(['lg' => 2]),
-
-                Forms\Components\Group::make()
-                    ->schema([
+                            ]),
                         Forms\Components\Section::make('Status')
                             ->schema([
                                 Forms\Components\Toggle::make('is_visible')
@@ -161,6 +124,7 @@ class ProductResource extends Resource
                                 Forms\Components\Select::make('shop_brand_id')
                                     ->relationship('brand', 'name')
                                     ->searchable()
+                                    ->preload()
                                     ->hiddenOn(ProductsRelationManager::class),
 
                                 Forms\Components\Select::make('categories')
@@ -204,12 +168,6 @@ class ProductResource extends Resource
                     ->label('Price')
                     ->searchable()
                     ->sortable(),
-
-                Tables\Columns\TextColumn::make('sku')
-                    ->label('SKU')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
 
                 Tables\Columns\TextColumn::make('qty')
                     ->label('Quantity')
@@ -279,7 +237,7 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-            \App\Filament\Resources\Products\ProductResource\RelationManagers\CommentsRelationManager::class,
+            VariantsRelationManager::class,
         ];
     }
 
@@ -293,9 +251,9 @@ class ProductResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \App\Filament\Resources\Products\ProductResource\Pages\ListProducts::route('/'),
-            'create' => \App\Filament\Resources\Products\ProductResource\Pages\CreateProduct::route('/create'),
-            'edit' => \App\Filament\Resources\Products\ProductResource\Pages\EditProduct::route('/{record}/edit'),
+            'index' => ListProducts::route('/'),
+            'create' => CreateProduct::route('/create'),
+            'edit' => EditProduct::route('/{record}/edit'),
         ];
     }
 
@@ -324,6 +282,6 @@ class ProductResource extends Resource
         /** @var class-string<Model> $modelClass */
         $modelClass = static::$model;
 
-        return (string) $modelClass::whereColumn('qty', '<', 'security_stock')->count();
+        return (string) $modelClass::query()->count();
     }
 }
