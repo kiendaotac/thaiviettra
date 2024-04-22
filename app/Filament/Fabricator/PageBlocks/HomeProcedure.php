@@ -28,13 +28,11 @@ class HomeProcedure extends PageBlock
                     }),
                 TextInput::make('title_text')
                     ->hidden(fn($get) => $get('title_type') !== 'text'),
-                FileUpload::make('image')
-                    ->image()
-                    ->multiple(false),
                 Repeater::make('process')
                 ->schema([
-                    TextInput::make('step'),
-                    TextInput::make('content')
+                    TextInput::make('step')->required(),
+                    TextInput::make('content')->required(),
+                    FileUpload::make('image')->image()->required(),
                 ])
             ]);
     }

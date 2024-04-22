@@ -46,7 +46,16 @@
                                             @endif
                                         </li>
                                         <li class="mega-menu-item @if(request()->routeIs('products*')) active @endif">
-                                            <a href="{{ route('products') }}">{{ __('menu.header.products') }}</a>
+                                            <a href="{{ route('products') }}" class=" @if($categories) mega-menu-link @endif">{{ __('menu.header.products') }}</a>
+                                            @if($categories)
+                                                <ul class="mega-submenu">
+                                                    @foreach($categories as $category)
+                                                        <li>
+                                                            <a href="{{ route('products',['category' => $category->slug]) }}">{{ $category->name }}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
                                         </li>
                                         <li class="mega-menu-item @if(request()->routeIs('discount')) active @endif">
                                             <a href="#" class=" @if($discounts) mega-menu-link @endif"> {{ __('menu.header.discount') }}</a>
@@ -100,7 +109,9 @@
                                                     <i class="flaticon-phone-call"></i>
                                                 </div>
                                                 <div class="content">
-                                                    <span class="title">{{ $settings->where('key', 'hotline_number')->first()->value }}</span>
+                                                    <a href="tel:{{ $settings->where('key', 'hotline_number')->first()->value }}">
+                                                        <span class="title">{{ $settings->where('key', 'hotline_number')->first()->value }}</span>
+                                                    </a>
                                                     <span>{{ $settings->where('key', 'hotline')->first()->value }}</span>
                                                 </div>
                                             </div>

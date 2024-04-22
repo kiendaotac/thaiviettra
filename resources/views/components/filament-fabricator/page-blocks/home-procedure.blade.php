@@ -12,18 +12,18 @@
                             <img src="{{ \Illuminate\Support\Facades\Storage::url(is_array($title_image) ? array_values($title_image)[0]: $title_image) }}">
                     @endif
                 </div>
-                @if($image)
-                    <div class="slider-for">
-                        <img src="{{ \Illuminate\Support\Facades\Storage::url(is_array($image) ? array_values($image)[0]: $image) }}">
-                    </div>
-                @endif
+                <div class="slider-for-stept">
+                    @foreach($process ?? [] as $step)
+                        <img src="{{ \Illuminate\Support\Facades\Storage::url( $step['image'] ?? '') }}">
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
 </section>
 <section class=" module_service section-stept clearfix">
     <div class="container">
-        <div class="row slider-nav stept-blog">
+        <div class="row slider-nav-stept stept-blog">
             @foreach($process ?? [] as $step)
                 <div class="item">
                     <div class="stept-wrap">

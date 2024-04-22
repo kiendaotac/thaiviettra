@@ -226,6 +226,18 @@
             confirmButtonColor: "#0E8342",
         });
     })
+    document.addEventListener('checkoutComplete', function (data) {
+        Swal.fire({
+            title: "Đặt hàng thành công",
+            text: "",
+            icon: "success",
+            confirmButtonColor: "#0E8342",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '{{ route('home') }}'
+            }
+        });
+    })
 </script>
 </body>
 </html>

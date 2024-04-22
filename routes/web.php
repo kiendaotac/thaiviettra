@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', \App\Livewire\HomePage::class)->name('home-page');
 Route::get('/', function () {
     return redirect('home');
-});
+})->name('home');
 Route::group(['namespace' => 'App\Livewire'], function () {
     Route::get('thuong-hieu', 'Brand')->name('brand');
     Route::get('thuong-hieu/{slug}', 'BrandDetail')->name('brand.detail');

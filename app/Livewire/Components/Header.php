@@ -5,13 +5,14 @@ namespace App\Livewire\Components;
 use App\Models\Blog\Post;
 use App\Models\Discount;
 use App\Models\Settings\Setting;
+use App\Models\Shop\Category;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
 class Header extends Component
 {
-    public $keyword, $brandPosts, $discounts;
+    public $keyword, $brandPosts, $discounts, $categories;
     protected $queryString = [
         'keyword' => 'keyword'
     ];
@@ -27,6 +28,7 @@ class Header extends Component
         })->oldest()->get();
         $this->discounts = Discount::query()->whereStatus('active')->get();
         $this->cart = Cart::instance('default')->content()->toArray();
+        $this->categories = Category::query()->where('is_visible', 1)->get();
     }
 
     public function render()

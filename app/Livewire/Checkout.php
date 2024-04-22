@@ -7,7 +7,6 @@ use App\Models\ProductVariant;
 use App\Models\Shop\Order;
 use App\Models\Shop\Product;
 use Gloudemans\Shoppingcart\Facades\Cart as ShopCart;
-use Illuminate\Support\Str;
 use Livewire\Component;
 
 class Checkout extends Component
@@ -75,5 +74,8 @@ class Checkout extends Component
                 'unit_price' => $cart->price
             ]);
         }
+        ShopCart::destroy();
+        $this->dispatch('updateCart');
+        $this->dispatch('checkoutComplete');
     }
 }

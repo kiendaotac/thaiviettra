@@ -94,7 +94,7 @@
                                                 <a class="tooltip-top" target="_blank"
                                                    href="https://www.youtube.com/" rel="noopener"
                                                    aria-label="Youtube" data-tooltip="Youtube">
-                                                    <i class="fa-brands fa-youtube"></i>
+                                                    <i class="fa-brands fa-tiktok"></i>
                                                 </a>
                                             </li>
                                         </ul>

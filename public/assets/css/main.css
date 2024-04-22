@@ -5620,11 +5620,11 @@ body.fb_hidden {
     color: #ffffff;
     font-weight: bold;
 }
-.page-checkout .form-group{
+/* .page-checkout .form-group{
     width: 49%;
     padding: 0 10px;
     display: inline-block;
-}
+} */
 .page-checkout  .form-group input {
     height: 40px;
     border-radius: 5px;
