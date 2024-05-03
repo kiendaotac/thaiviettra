@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="about">
                                     <span>{{ __('Product description') }}</span>
-                                    <p>{{ $product->description }}</p>
+                                    <p>{!! $product->description !!}</p>
                                 </div>
                                 @php
                                 if ($variant) {
