@@ -29,7 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->plugin(SpatieLaravelTranslatablePlugin::make()->defaultLocales(['en', 'vi']))
+            ->plugin(SpatieLaravelTranslatablePlugin::make()->defaultLocales(['vi', 'en']))
             ->plugin(FilamentFabricatorPlugin::make())
             ->colors([
                 'primary' => Color::Amber,
