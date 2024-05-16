@@ -1,6 +1,6 @@
 <div class="site-main">
     <div class="banner">
-        <img src="{{ asset('assets/image/back-7.png') }}">
+        <img src="{{ $discount->banner ? \Illuminate\Support\Facades\Storage::url($discount->banner) : asset('assets/image/back-7.png') }}">
     </div>
     @php
         $product = $discount->product;
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="about">
                                     <span>{{ __('Product description') }}</span>
-                                    <p>{{ $product->description }}</p>
+                                    <p>{!! $product->description !!}</p>
                                 </div>
                                 <div class="price">{{ \Illuminate\Support\Number::currency($product->price, in: 'VND', locale: 'vi') }}</div>
                                 <div class="form-group">
