@@ -1,6 +1,6 @@
 <div class="site-main">
     <div class="banner">
-        <img src="{{ asset('assets/image/back-7.png') }}">
+        <img src="{{ $discount->banner ? \Illuminate\Support\Facades\Storage::url($discount->banner) : asset('assets/image/back-7.png') }}">
     </div>
     @php
         $product = $discount->product;

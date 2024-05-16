@@ -55,6 +55,10 @@ class DiscountResource extends Resource
                     ->columnSpanFull()
                     ->label('Sản phẩm')
                     ->options(fn() => Product::query()->latest()->pluck('name', 'id')),
+                FileUpload::make('banner')
+                    ->imageEditor()
+                    ->label('Banner')
+                    ->columnSpanFull(),
                 Repeater::make('paper')
                     ->label('Giấy tờ')
                     ->columnSpanFull()
