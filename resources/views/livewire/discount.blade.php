@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="about">
                                     <span>{{ __('Product description') }}</span>
-                                    <p>{{ $product->description }}</p>
+                                    <p>{!! $product->description !!}</p>
                                 </div>
                                 <div class="price">{{ \Illuminate\Support\Number::currency($product->price, in: 'VND', locale: 'vi') }}</div>
                                 <div class="form-group">

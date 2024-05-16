@@ -58,10 +58,10 @@ class PostResource extends Resource
                             ->maxLength(255)
                             ->unique(Post::class, 'slug', ignoreRecord: true),
 
-                        Forms\Components\MarkdownEditor::make('description')
+                        Forms\Components\RichEditor::make('description')
                             ->required()
                             ->columnSpan('full'),
-                        Forms\Components\MarkdownEditor::make('content')
+                        Forms\Components\RichEditor::make('content')
                             ->required()
                             ->columnSpan('full'),
 
