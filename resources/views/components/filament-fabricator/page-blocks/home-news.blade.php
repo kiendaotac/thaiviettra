@@ -13,14 +13,18 @@
             @foreach($posts as $post)
                 <div class="item">
                     <div class="thumb">
-                        <img src="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}">
+                        <a href="{{ route('brand.detail', $post->slug) }}">
+                            <img src="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}">
+                        </a>
                     </div>
                     <div class="infor">
                         <div class="name">
                             {{ $post->author->name }}
                         </div>
                         <div class="except">
-                            {{ $post->title }}
+                            <a href="{{ route('brand.detail', $post->slug) }}">
+                                {{ $post->title }}
+                            </a>
                         </div>
                         <div class="read-more">
                             <a href="{{ route('brand.detail', $post->slug) }}">Read More</a>
