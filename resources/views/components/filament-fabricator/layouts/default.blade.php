@@ -1,19 +1,10 @@
 @props(['page'])
 <x-filament-fabricator::layouts.base :title="$page->title">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="title" content="Trà Thái Việt">
-    <meta name="description" content="Trà Thái Việt, tinh hoa trà Việt">
-    <meta name="keywords" content="trà, thái việt, trà xanh, trà cụ, trà đinh, trà nõn">
-    <meta name="language" content="Vietnamese">
+
     @php
         $productImage = !empty($product) ? $product->getMedia('product-images')->first()->getUrl() : asset('assets/image/logo.png');
         $description = empty($product) ? 'Trà Thái Việt, tinh hoa trà Việt' : $product->description;
     @endphp
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/image/logo.png') }}">
     <meta property="og:image" content="{{ $productImage }}" />
     <meta property="og:image:secure_url" content="{{ $productImage }}" />
     <meta property="og:image:height" content="256" />
