@@ -54,7 +54,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/stylesheet.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/all.min.css') }}" media="all">
     <script src="{{ asset('assets/js/script.js') }}"></script>
-    <link rel="shortcut icon" href="{{ asset('assets/image/logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/image/logo.png') }}">
     <meta name="description" content="Trà Thái Việt">
 </head>
 

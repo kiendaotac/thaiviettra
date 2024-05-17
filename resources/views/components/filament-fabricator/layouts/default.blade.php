@@ -13,6 +13,7 @@
         $productImage = !empty($product) ? $product->getMedia('product-images')->first()->getUrl() : asset('assets/image/logo.png');
         $description = empty($product) ? 'Trà Thái Việt, tinh hoa trà Việt' : $product->description;
     @endphp
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/image/logo.png') }}">
     <meta property="og:image" content="{{ $productImage }}" />
     <meta property="og:image:secure_url" content="{{ $productImage }}" />
     <meta property="og:image:height" content="256" />
