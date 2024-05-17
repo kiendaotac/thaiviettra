@@ -7,6 +7,21 @@
     <meta name="robots" content="index, follow">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Trà Thái Việt</title>
+    <meta name="title" content="Trà Thái Việt">
+    <meta name="description" content="Trà Thái Việt, tinh hoa trà Việt">
+    <meta name="keywords" content="trà, thái việt, trà xanh, trà cụ, trà đinh, trà nõn">
+    <meta name="language" content="Vietnamese">
+    @php
+        $productImage = !empty($product) ? $product->getMedia('product-images')->first()->getUrl() : asset('assets/image/logo.png');
+        $description = empty($product) ? 'Trà Thái Việt, tinh hoa trà Việt' : $product->description;
+    @endphp
+    <meta property="og:image" content="{{ $productImage }}" />
+    <meta property="og:image:secure_url" content="{{ $productImage }}" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:alt" content="{{ $description }}" />
+    <meta property="og:image:type" content="image/jpg" />
+
 
     <link rel="preload" as="style" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="preload" as="style" type="text/css" href="{{ asset('assets/css/shortcodes.css') }}">
