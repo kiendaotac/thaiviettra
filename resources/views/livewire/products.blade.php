@@ -1,6 +1,17 @@
+@php
+    $page = \Z3d0X\FilamentFabricator\Models\Page::query()->where('slug', 'home')->first();
+    $data = collect($page->blocks)->filter(fn($item) => $item['type'] == 'home-slider')->first();
+    $images = $data['data']['images'] ?? [];
+@endphp
 <div class="site-main">
     <div class="banner">
-        <img src="{{ asset('assets/image/banner-shop.jpg') }}">
+        <div class="slick_slider slider-banner lazy ">
+            @foreach($images as $image)
+                <div class="item">
+                    <img class="img-center img-banner" src="{{ \Illuminate\Support\Facades\Storage::url($image) }}">
+                </div>
+            @endforeach
+        </div>
     </div>
     <section class="section-block module_service process-section ttm-bgimage-yes bg-img6 ttm-bg res-991-margin_top_0 ttm-bgcolor-primary  clearfix">
         <div class="container">
