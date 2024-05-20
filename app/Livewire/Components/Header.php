@@ -12,10 +12,7 @@ use Livewire\Component;
 
 class Header extends Component
 {
-    public $keyword, $brandPosts, $discounts, $categories;
-    protected $queryString = [
-        'keyword' => 'keyword'
-    ];
+    public $brandPosts, $discounts, $categories;
 
     public $settings;
     public $cart;
