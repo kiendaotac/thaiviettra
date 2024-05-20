@@ -20,9 +20,9 @@
                                 </div>
                                 <!-- menu -->
                                 <nav class="main-menu menu-mobile" id="menu">
-                                    <div class="header_search_custom " id="search">
-                                        <form class="d-flex flex-row  justify-content-center align-items-center">
-                                            <input wire:model.live="keyword" class="search_query" type="text" placeholder="{{ __('Search') }}">
+                                    <div class="header_search_custom " id="search" wire:ignore>
+                                        <form action="{{ route('products') }}" class="d-flex flex-row  justify-content-center align-items-center">
+                                            <input name="search" class="search_query" type="text" placeholder="{{ __('Search') }}">
                                             <button type="submit" class="btn close-search button_search"
                                                     aria-label="searchbox-align">
                                                 <i class="fa fa-search"></i>
