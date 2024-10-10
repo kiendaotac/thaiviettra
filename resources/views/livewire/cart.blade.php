@@ -5,7 +5,7 @@
 <div class="cart-container container page-wrapper page-checkout">
     <div class="woocommerce">
         <div class="woocommerce row row-large row-divided">
-            <div class="col-8 large-8 pb-0 ">
+            <div class="col-12 large-12 pb-0">
                 <form class="woocommerce-cart-form">
                     <div class="cart-wrapper sm-touch-scroll">
                         <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
@@ -72,7 +72,7 @@
                     </div>
                 </form>
             </div>
-            <div class="cart-collaterals large-4 col-4 pb-0">
+            <div class="cart-collaterals large-12 col-12 pb-0">
                 <div class="cart-sidebar col-inner ">
                     <div class="cart_totals ">
                         <table >
@@ -119,11 +119,4 @@
             })
         })
     </script>
-    <style>
-        @media (min-width: 768px) {
-            .woocommerce.row-divided {
-                flex-direction: row;
-            }
-        }
-    </style>
 </section>
