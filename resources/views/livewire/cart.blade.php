@@ -103,7 +103,7 @@
                         </table>
                         <div class="wc-proceed-to-checkout">
                             <a href="{{ route('checkout') }}" class="checkout-button button alt wc-forward">
-                                Tiến hành thanh toán
+                                Thanh toán
                             </a>
                         </div>
                     </div>
@@ -119,4 +119,11 @@
             })
         })
     </script>
+    <style>
+        @media (min-width: 768px) {
+            .woocommerce.row-divided {
+                flex-direction: column;
+            }
+        }
+    </style>
 </section>
