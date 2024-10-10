@@ -32,20 +32,18 @@
                     </span>
                 @enderror
             </diV>
-            <div class="row">
-                <div class="form-group">
-                    <label>Địa chỉ</label>
-                    <textarea wire:model.debounce="address" class="form-control w-100 col-12"></textarea>
-                    @error('address')
-                    <span class="text-danger">
-                        {{ $message }}
-                    </span>
-                    @enderror
-                </diV>
-            </div>
+            <div class="form-group">
+                <label>Địa chỉ</label>
+                <textarea wire:model.debounce="address" class="form-control w-100 col-12"></textarea>
+                @error('address')
+                <span class="text-danger">
+                    {{ $message }}
+                </span>
+                @enderror
+            </diV>
             <h4 id="order_review_heading">Đơn hàng của bạn</h4>
             <div id="order_review" class="woocommerce-checkout-review-order">
-                <table class="shop_table woocommerce-checkout-review-order-table">
+                <table class="shop_table woocommerce-checkout-review-order-table w-100">
                     <thead>
                         <tr>
                             <th class="product-name">Sản phẩm</th>
@@ -104,7 +102,7 @@
                     </tfoot>
                 </table>
             </div>
-            <button wire:click.prevent="checkout">Đặt hàng</button>
+            <button class="w-auto mt-4" wire:click.prevent="checkout">Đặt hàng</button>
         </form>
     </div>
 </section>

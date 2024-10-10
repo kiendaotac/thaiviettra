@@ -8,7 +8,7 @@
             <div class="col-12 large-12 pb-0">
                 <form class="woocommerce-cart-form">
                     <div class="cart-wrapper sm-touch-scroll">
-                        <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+                        <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents w-100" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th class="product-name" colspan="3">Sản phẩm</th>
@@ -101,8 +101,8 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="wc-proceed-to-checkout">
-                            <a href="{{ route('checkout') }}" class="checkout-button button alt wc-forward">
+                        <div class="wc-proceed-to-checkout" style="display: inline-block">
+                            <a href="{{ route('checkout') }}" class="checkout-button button alt wc-forward" style="padding: 0 20px; border-radius: 3px">
                                 Thanh toán
                             </a>
                         </div>
