@@ -58,7 +58,7 @@ class ProductDetail extends Component
                 'name' => $this->product->name,
                 'qty' => $this->qty,
                 'price' => $productVariant->price,
-                'weight' => $productVariant->weight,
+                'weight' => $productVariant->weight ?? 0,
                 'options' => [
                     'variant' => $this->variant,
                 ]
@@ -69,7 +69,7 @@ class ProductDetail extends Component
                 'name' => $this->product->name,
                 'qty' => $this->qty,
                 'price' => $this->product->price,
-                'weight' => $this->product->weight,
+                'weight' => $this->product->weight ?? 0,
             ];
         }
         Cart::add($data);
