@@ -122,7 +122,7 @@
     <style>
         @media (min-width: 768px) {
             .woocommerce.row-divided {
-                flex-direction: column;
+                flex-direction: row;
             }
         }
     </style>
