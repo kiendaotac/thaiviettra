@@ -101,7 +101,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="wc-proceed-to-checkout" style="display: inline-block">
+                        <div class="wc-proceed-to-checkout mt-3">
                             <a href="{{ route('checkout') }}" class="checkout-button button alt wc-forward" style="padding: 0 20px; border-radius: 3px">
                                 Thanh toán
                             </a>
