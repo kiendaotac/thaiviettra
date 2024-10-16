@@ -3594,7 +3594,7 @@ ul.widget_contact_wrapper li i {
 }
 
 .bottom-footer-text:before {
-    background-image: url(../../../../../image/catalog/fuel-truck.png);
+    background-image: url(../image/catalog/fuel-truck.png);
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
@@ -3609,7 +3609,7 @@ ul.widget_contact_wrapper li i {
 }
 
 .bottom-footer-text:after {
-    background-image: url(../../../../../image/catalog/crane-truck.png);
+    background-image: url(../image/catalog/crane-truck.png);
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
